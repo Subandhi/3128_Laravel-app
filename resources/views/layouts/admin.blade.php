@@ -68,7 +68,7 @@
                 Kelola Event
             </a>
 
-            <!-- Transactions -->
+            <!-- Partners -->
             <a href="{{ route('admin.partners.index') }}"
                class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition
                {{ request()->routeIs('admin.partners.*') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }}">
