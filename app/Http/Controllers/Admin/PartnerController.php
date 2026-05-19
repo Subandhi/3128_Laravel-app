@@ -24,7 +24,7 @@ class PartnerController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
-            'logo_url' => 'nullable|string|max:2048',
+            'logo_url' => 'nullable|url|max:2048',
         ]);
 
         Partner::create($data);
@@ -43,7 +43,7 @@ class PartnerController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
-            'logo_url' => 'nullable|string|max:2048',
+            'logo_url' => 'nullable|url|max:2048',
         ]);
 
         $partner->update($data);
