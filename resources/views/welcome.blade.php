@@ -134,4 +134,37 @@
             @endforelse
         </div>
     </section>
+
+    <!-- Partners Section -->
+    @if($partners->count() > 0)
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="mb-12">
+            <h2 class="text-3xl font-extrabold mb-2">Partner & Sponsor</h2>
+            <p class="text-slate-500 font-medium">Perusahaan terpercaya yang mendukung AmikomEventHub</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            @foreach ($partners as $partner)
+                <div class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center justify-center">
+                    @if($partner->logo_url)
+                        <img src="{{ asset($partner->logo_url) }}"
+                             alt="{{ $partner->name }}"
+                             class="w-full h-32 object-contain mb-4 group-hover:scale-110 transition-transform duration-300">
+                    @else
+                        <div class="w-full h-32 bg-slate-100 rounded-lg flex items-center justify-center mb-4 text-slate-400">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    @endif
+
+                    <h3 class="text-center font-bold text-slate-800 text-sm group-hover:text-indigo-600 transition">
+                        {{ $partner->name }}
+                    </h3>
+                </div>
+            @endforeach
+        </div>
+    </section>
+    @endif
 @endsection

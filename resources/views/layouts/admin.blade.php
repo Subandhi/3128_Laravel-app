@@ -68,6 +68,32 @@
                 Kelola Event
             </a>
 
+            <!-- Categories -->
+            <a href="{{ route('admin.categories.index') }}"
+               class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition
+               {{ request()->routeIs('admin.categories.*') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }}">
+
+                <svg class="w-5 h-5 {{ request()->routeIs('admin.categories.*') ? 'text-indigo-300' : 'text-indigo-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+
+                Kelola Kategori
+            </a>
+
+            <!-- Partners -->
+            <a href="{{ route('admin.partners.index') }}"
+               class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition
+               {{ request()->routeIs('admin.partners.*') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }}">
+
+                <svg class="w-5 h-5 {{ request()->routeIs('admin.partners.*') ? 'text-indigo-300' : 'text-indigo-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 4.354a4 4 0 110 5.292M15 12H9m6 0h.01M9 12h.01M7.51 7.51L5.636 5.636m10.728 0l1.874-1.874M5.636 18.364l-1.874 1.874m10.728 0l1.874 1.874"/>
+                </svg>
+
+                Kelola Partner
+            </a>
+
             <!-- Transactions -->
             <a href="{{ route('admin.transactions.index') }}"
                class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition
@@ -87,7 +113,7 @@
 
         <!-- Logout -->
         <div class="pt-6 border-t border-indigo-800">
-            <form action="#" method="POST">
+            <form action="" method="POST">
                 @csrf
                 <button type="submit"
                         class="w-full flex items-center gap-3 px-4 py-3 text-indigo-300 hover:text-white transition font-medium text-left">
